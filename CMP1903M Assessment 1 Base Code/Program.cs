@@ -34,8 +34,8 @@ namespace CMP1903M_Assessment_1_Base_Code
             //User chooses to enter text manually or read text from a file within a desired path.
             Console.WriteLine("1: Enter text manually.");
             Console.WriteLine("2: Read text from a file.");
-            bool isValid = true;
-            while (isValid == true)
+            
+            while (true)
             {
                 try
                 {
@@ -43,42 +43,41 @@ namespace CMP1903M_Assessment_1_Base_Code
                     if (choice == 1)
                     {
                         
-                        input = newInput.manualTextInput();
-                        parameters = analyse.analyseText(input);
-                        output = outputFile.outputFile(input);
-                        isValid = false;
+                        input = newInput.ManualTextInput();
+                        parameters = analyse.AnalyseText(input);
+                        
                         break;
 
                     }
                     else if (choice == 2)
                     {
                        
-                        input = newInput.fileTextInput(input);//pass the input from the file path
-                        parameters = analyse.analyseText(input);
-                        output = outputFile.outputFile(input);
-                        isValid = false;
+                        input = newInput.FileTextInput(input);//pass the input from the file path
+                        parameters = analyse.AnalyseText(input);
+                        output = outputFile.OutputFile(input);
+                        
                         break;
 
 
                     }
                     else
-                    {
-                        Console.WriteLine("Please choose choice 1 or choice 2");
-                    }
+                        Console.WriteLine("1: Enter text manually.");
+                        Console.WriteLine("2: Read text from a file.");
 
                 }
 
                 catch
                 {
-                    Console.WriteLine("Please choose choice 1 or choice 2");
+                    Console.WriteLine("1: Enter text manually.");
+                    Console.WriteLine("2: Read text from a file.");
                 }
             }
             
-            int vowels = report.vowelCount(parameters);
-            int upperLetters = report.upperCount(parameters);
-            int sentences = report.sentenceCount(parameters);
-            int lowerLetters = report.lowerCount(parameters);
-            int consonants = report.consonantCount(parameters);
+            int vowels = report.VowelCount(parameters);
+            int upperLetters = report.UpperCount(parameters);
+            int sentences = report.SentenceCount(parameters);
+            int lowerLetters = report.LowerCount(parameters);
+            int consonants = report.ConsonantCount(parameters);
 
             //Outputting the count of each to user.
             Console.WriteLine("Number of vowels: "+vowels);

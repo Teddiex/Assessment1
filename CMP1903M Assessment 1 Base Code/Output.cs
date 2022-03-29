@@ -8,14 +8,16 @@ namespace CMP1903M_Assessment_1_Base_Code
 {
     public class Output
     {
-        public List<int> outputFile(string input)
+        public List<int> OutputFile(string input)
         {
+            Analyse analyse = new Analyse();
             //create empty list to store number of long words.
             List<int> output = new List<int>();
             //Create a file named longWords.txt
             //Should be saved in CMP1903M Assessment 1 Base Code\CMP1903M Assessment 1 Base Code\bin\Debug\net6.0\longwords.txt
             using StreamWriter file = new StreamWriter("longWords.txt");
             string[] words = input.Split(new Char[] { ' ', '.', '!', '?', ',' }); //remove these characters
+            analyse.RemoveAsterisk(input);
             foreach (var w in words)
             {
                 if (w.Trim() != " ")
