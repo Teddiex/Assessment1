@@ -70,24 +70,6 @@ namespace CMP1903M_Assessment_1_Base_Code
 
             }
 
-
-            //Create a file named longWords.txt
-            //Should be saved in CMP1903M Assessment 1 Base Code\CMP1903M Assessment 1 Base Code\bin\Debug\net6.0\longwords.txt
-            using StreamWriter file = new StreamWriter("longWords.txt");
-            string[] words = input.Split(new Char[] { ' ', '.', '!', '?', ',' }); //remove these characters
-            foreach (var w in words)
-            {
-                if (w.Trim() != " ")
-                {
-                    if (w.Length >= 7)
-                    {
-                        file.Write(w + "\n"); //write word to file + newline
-
-                    }
-                }
-
-            }
-
             return parameters;
         }
     }
