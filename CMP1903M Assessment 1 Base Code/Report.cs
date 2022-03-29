@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Reflection;
 using static CMP1903M_Assessment_1_Base_Code.Analyse;
 
 namespace CMP1903M_Assessment_1_Base_Code
@@ -16,6 +17,7 @@ namespace CMP1903M_Assessment_1_Base_Code
         
         public int SentenceCount(List<int>parameters)
         {
+            
             int sentences = parameters[1];
             return sentences;
         }

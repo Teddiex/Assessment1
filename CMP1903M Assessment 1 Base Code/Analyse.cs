@@ -9,32 +9,31 @@ namespace CMP1903M_Assessment_1_Base_Code
     public class Analyse
     {
         //Handles the analysis of text
-        public void RemoveAsterisk(string input)
+        public string RemoveAsterisk(string input)
         {
             if (input.Contains('*'))
             {
                 input = input.Substring(0, input.IndexOf("*"));
             }
+            return input;
         }
-      
+
+        
+        
         public List<int> AnalyseText(string input)
         {
-
+            Analyse analyse = new Analyse(); // new analyse object to store the input
+            input = analyse.RemoveAsterisk(input);
             //List of integers to hold the first five measurements:
-            //1. Number of sentences
-            //2. Number of vowels
-            //3. Number of consonants
-            //4. Number of upper case letters
-            //5. Number of lower case letters
             List<int> parameters = new List<int>();
             //Initialise all the values in the list to '0'
             for (int i = 0; i < 5; i++)
             {
                 parameters.Add(0);
             }
-
             
-            RemoveAsterisk(input);
+            
+            
             
 
             //count the number of sentences in the input.
@@ -59,6 +58,7 @@ namespace CMP1903M_Assessment_1_Base_Code
                 
                 else if ((input[i] >= 'a' && input[i] <= 'z') ||
                         (input[i] >= 'A' && input[i] <= 'Z'))
+
                     parameters[3]++; //count consonant
                 
 
