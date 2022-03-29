@@ -9,9 +9,15 @@ namespace CMP1903M_Assessment_1_Base_Code
     public class Analyse
     {
         //Handles the analysis of text
-
+        public void RemoveAsterisk(string input)
+        {
+            if (input.Contains('*'))
+            {
+                input = input.Substring(0, input.IndexOf("*"));
+            }
+        }
       
-        public List<int> analyseText(string input)
+        public List<int> AnalyseText(string input)
         {
 
             //List of integers to hold the first five measurements:
@@ -27,11 +33,9 @@ namespace CMP1903M_Assessment_1_Base_Code
                 parameters.Add(0);
             }
 
-            //Only uses the input before the *, removes other input after *
-            if (input.Contains('*'))
-            {
-                input = input.Substring(0, input.IndexOf("*"));
-            }
+            
+            RemoveAsterisk(input);
+            
 
             //count the number of sentences in the input.
             for (int i = 0; i < input.Length; i++)
@@ -45,16 +49,18 @@ namespace CMP1903M_Assessment_1_Base_Code
             //count vowels and consonants
             for (int i = 0; i < input.Length; i++)
             {
-                if ((input[i] >= 'a' && input[i] >= 'z') || (input[i] >= 'A' && input[i] >= 'Z'))
-                {
-                    if (input[i] == 'a' || input[i] == 'e' || input[i] == 'i' || input[i] == 'o' || input[i] == 'u')
-                        parameters[2]++; //count vowel
-
-                    else if (input[i] == 'A' || input[i] == 'E' || input[i] == 'I' || input[i] == 'O' || input[i] == 'O')
-                        parameters[2]++; //count vowel
-
-                    else parameters[3]++; //count consonant 
-                }
+                if (input[i] == 'a' || input[i] == 'e' ||
+                    input[i] == 'i' || input[i] == 'o' ||
+                    input[i] == 'u' || input[i] == 'A' ||
+                    input[i] == 'E' || input[i] == 'I' ||
+                    input[i] == 'O' || input[i] == 'U')
+                    
+                    parameters[2]++; //count vowel
+                
+                else if ((input[i] >= 'a' && input[i] <= 'z') ||
+                        (input[i] >= 'A' && input[i] <= 'Z'))
+                    parameters[3]++; //count consonant
+                
 
             }
 

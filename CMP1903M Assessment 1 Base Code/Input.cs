@@ -17,7 +17,7 @@ namespace CMP1903M_Assessment_1_Base_Code
         //Arguments: none
         //Returns: string
         //Gets text input from the keyboard
-        public string manualTextInput()
+        public string ManualTextInput()
         {
             Console.WriteLine("Enter a set of strings, ending each sentence with a '.' followed by an asterisk");
             string text = Console.ReadLine();
@@ -28,24 +28,20 @@ namespace CMP1903M_Assessment_1_Base_Code
         //Arugments: path
         //Returns: string or null
         //Gets text input from a .txt file
-        public string fileTextInput(string path)
+        public string FileTextInput(string path)
         {
             
-            //Exits program if the file is not found.
-            try
-            {
-                Console.WriteLine("Enter the path of the file");
+            do //loop until a valid path is given
+            {     
+                Console.WriteLine("Enter the path of the file: ");
                 path = Console.ReadLine();
+                if (!path.EndsWith(".txt"))
+                    path = path + ".txt";
                 string text = File.ReadAllText(@path);
                 return text;
-            }
-            catch
-            {
-                Console.WriteLine("File not found, program terminated");
-                Environment.Exit(1);
-                return null;
-            }
-
+                
+                
+            } while (path == ".txt" || !File.Exists(path));
         }
 
     }
