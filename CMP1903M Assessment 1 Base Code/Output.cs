@@ -10,6 +10,7 @@ namespace CMP1903M_Assessment_1_Base_Code
     {
         public List<int> outputFile(string input)
         {
+            //create empty list to store number of long words.
             List<int> output = new List<int>();
             //Create a file named longWords.txt
             //Should be saved in CMP1903M Assessment 1 Base Code\CMP1903M Assessment 1 Base Code\bin\Debug\net6.0\longwords.txt
