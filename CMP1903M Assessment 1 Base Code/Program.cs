@@ -28,7 +28,7 @@ namespace CMP1903M_Assessment_1_Base_Code
             Analyse analyse = new Analyse();
             //Creating a Report Object
             Report report = new Report();
-            //Creating an output object
+            //Creating an output object - new class <----
             Output outputFile = new Output();
 
             //User chooses to enter text manually or read text from a file within a desired path.
