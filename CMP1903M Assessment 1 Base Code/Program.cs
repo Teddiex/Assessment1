@@ -13,6 +13,7 @@ namespace CMP1903M_Assessment_1_Base_Code
 {
     class Program
     {
+
         static void Main()
         {
             //List to hold parameters and output
@@ -55,6 +56,8 @@ namespace CMP1903M_Assessment_1_Base_Code
                         input = newInput.FileTextInput(input);//pass the input from the file path
                         parameters = analyse.AnalyseText(input);
                         output = outputFile.OutputFile(input);
+                        outputFile.messageOutput = "Frequencies:\n";
+                        Console.WriteLine(outputFile.messageOutput);
                         
                         break;
 

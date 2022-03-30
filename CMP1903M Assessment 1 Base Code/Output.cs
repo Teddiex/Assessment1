@@ -8,6 +8,7 @@ namespace CMP1903M_Assessment_1_Base_Code
 {
     public class Output
     {
+        public string messageOutput { get; set; } //<--- Encapsulation
         public List<int> OutputFile(string input)
         {
             Analyse analyse = new Analyse();

@@ -13,7 +13,6 @@ namespace CMP1903M_Assessment_1_Base_Code
         //Report class that handles the analysis parameters
         //All methods return an Integer
         //All methods have the list 'parameters' as an arugment
-
         
         public int SentenceCount(List<int>parameters)
         {
